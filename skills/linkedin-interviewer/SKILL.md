@@ -14,11 +14,11 @@ This skill does the asking properly, once, and keeps the answers.
 
 ## The two things it fills
 
-| | `references/voice-profile.md` | `references/story-bank.md` |
+| | `clients/<client-id>/voice-profile.md` | `clients/<client-id>/story-bank.md` |
 |---|---|---|
-| Holds | how you sound | what you have to say |
-| Built from | 3-6 posts you already wrote | an interview |
-| Built by | `linkedin-humanizer --mode profile` | this skill |
+| Holds | how the client sounds | what the client has to say |
+| Built from | 3-10 genuine writing samples | a client interview |
+| Built by | voice profiling process | this skill |
 
 They are independent. Someone with no LinkedIn history cannot fill the first, but
 can always fill the second, which is the usual reason drafts come out generic.
@@ -39,9 +39,9 @@ Not for learning someone's writing style from their posts, which is
 
 ### `--mode bank` (default)
 
-A broad interview that fills `../../references/story-bank.md` and keeps it.
-Budget 20 to 40 minutes. It can be resumed: the file records which sections are
-thin, so a second session picks up there.
+A broad interview that fills the active client's separate `story-bank.md`.
+Budget 20 to 40 minutes. It can be resumed using that client's existing records.
+Never write to a shared Story Bank when a client-specific workspace is required.
 
 ### `--mode post`
 
@@ -122,11 +122,13 @@ Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific
 - **Press once, not twice.** The goal is material, not a confession.
 - **Stop when they flag a limit.** "I would rather not say" ends that line
   permanently; record it under Off limits so nothing asks again.
-- **Never write the bank to a tracked file without saying so.** Tell the user once
-  that it lives in the repo and should be gitignored.
-- **Do not turn it into a form.** If the user is talking, follow them; the section
-  list is a checklist for the end, not a script for the middle.
+**Respect client storage and consent.** Before storing interview material, explain
+  where it will be saved and obtain approval. Never store confidential client
+  information in a public or shared Git repository. Use an approved private
+  workspace; if one is unavailable, provide separate Markdown records for the
+  user to store securely.
 
+  
 ## Anti-patterns (skill will refuse)
 
 - Filling the bank from a LinkedIn profile scrape instead of the person. A
@@ -147,11 +149,10 @@ user. Only what the user says in this conversation counts as an answer. Full rul
 
 ## Resources
 
-- `../../references/story-bank.md` — the file this skill fills
+- `clients/<client-id>/story-bank.md` — the active client's separate Story Bank
 - `references/question-bank.md` — questions that reliably produce usable material,
   and the ones that do not
-- `../../references/voice-profile.md` — the other half of the user model
-
+- `clients/<client-id>/voice-profile.md` — the active client's separate voice profile
 ## Related skills
 
 - `linkedin-humanizer --mode profile` — learns how they write; run both
@@ -335,4 +336,66 @@ Once onboarding is complete, provide:
 9. Three initial content opportunities based on verified material.
 
 Require human review of the onboarding summary before treating it as the approved client record.
+
+
+## Client Workspace Routing and Record Management
+
+The agency onboarding system must use client-specific records rather than shared personal files.
+
+### 1. Client identification
+
+Before reading, updating or handing off client information, identify the active client using a unique client ID.
+
+If the client ID is missing or ambiguous, ask the user to identify the client.
+
+Never assume that the active client is the same as the previous conversation.
+
+### 2. Client record structure
+
+Use the following logical structure for each client:
+
+clients/<client-id>/
+- client-profile.md
+- voice-profile.md
+- story-bank.md
+- brand-guidelines.md
+- content-performance.md
+
+All five records must belong to the same client ID.
+
+### 3. Read and update the correct records
+
+Before an interview:
+- Read the active client's existing records, if available.
+- Identify missing or incomplete sections.
+- Continue from existing information rather than repeating answered questions.
+
+After an interview:
+- Update only the active client's records.
+- Preserve verified information and original wording.
+- Mark unknown information as unknown.
+- Record the date of the update.
+
+### 4. Legacy shared files
+
+The original shared files `references/voice-profile.md` and `references/story-bank.md` must not automatically be treated as belonging to every client.
+
+Use them only when the user explicitly identifies them as the active client's records.
+
+### 5. Storage limitations
+
+Do not claim that a file or folder has been created, updated or saved unless the relevant file operation has actually succeeded.
+
+If persistent file creation or updating is unavailable, provide the completed client records as separate Markdown documents for human review and storage.
+
+### 6. Cross-client protection
+
+Never:
+- Copy one client's stories into another client's Story Bank.
+- Use one client's voice profile to write another client's content.
+- Transfer confidential business information between clients.
+- Use one client's performance data to evaluate another client's content.
+
+Client isolation takes priority over convenience.
+
 
