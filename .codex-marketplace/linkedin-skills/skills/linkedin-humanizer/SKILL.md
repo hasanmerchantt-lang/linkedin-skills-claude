@@ -1,6 +1,6 @@
 ---
 name: linkedin-humanizer
-description: "Remove AI tells from LinkedIn posts/comments: 2026 vocabulary density, reveal bridges, staccato fragments, stacked triads, performed sincerity. Tiered rewriter plus `--mode audit` LinkedIn post auditor and `--mode profile` voice builder. Not for drafting from scratch (use linkedin-post-writer) or beating AI detectors. Keywords: humanize, de-AI, post audit, post auditor, audit before posting."
+description: "Humanize and refine LinkedIn posts, comments, replies and professional content while preserving the author's authentic voice, meaning and individuality. Supports isolated multi-client voice profiles, proportional editing, AI-pattern audits and pre-publication quality checks. Never fabricates personal details or forces artificial storytelling. Not for drafting from scratch; use linkedin-post-writer."
 ---
 
 # LinkedIn Humanizer V3
@@ -34,11 +34,41 @@ Any text (post, comment, reply, DM). Optional: target voice samples (past human 
 
 ## Output
 
-- Rewritten text with AI tells removed
-- Diff showing what changed and why
-- Per-paragraph tell density (markers per paragraph; 3+ triggered a rewrite)
-- Reader-read confidence: "reads human", "mixed", "reads AI" (this is a reader-tell estimate, not a detector score)
-- Tier applied (which mode was used)
+
+
+Return the following:
+
+### 1. Humanized Draft
+The complete revised post, ready for human review.
+
+### 2. Editing Summary
+Briefly explain:
+- What was changed.
+- Which AI-like patterns were removed.
+- What original expressions or stylistic choices were preserved.
+
+### 3. Voice Consistency
+Rate the draft:
+- Strong match
+- Partial match
+- Insufficient voice information
+
+Explain any significant mismatch briefly.
+
+### 4. Accuracy Check
+Confirm whether:
+- Original meaning was preserved.
+- Any unsupported facts or personal details were introduced.
+- Any missing information needs clarification.
+
+### 5. Editorial Recommendation
+Choose one:
+- Ready for human review.
+- Minor edits recommended.
+- Needs further revision.
+
+Never describe a draft as guaranteed to be human-written or undetectable by AI detectors.
+
 
 ## Modes
 
@@ -96,30 +126,64 @@ Detectors do not score burstiness, and on LinkedIn sentence-length variance is n
 
 Target: Flesch reading ease >55. No sentence-length variance target. The check is "does any paragraph read machine-flat, and did I add a staccato pattern," not a number.
 
-### Pass 3: ADD (human fingerprints)
 
-Require at least:
-- One odd-precision number WITH a named referent: who, what, when, or what it cost ("$4,730 in Vercel overages, March invoice", not "$5k" and not "significant costs"). A bare number is not a fingerprint; LLM news copy uses more numbers than humans do. The referent is what carries the signal.
-- One named entity (real person, company, date, city, tool)
-- One first-person sensory detail
-- One contradiction or self-correction, stated as a fact ("I predicted 3 months. It took 11."), not framed
-- One specific, dated, uncomfortable fact stated flat, with no framing sentence before or after it. Not "I'll be honest, this hurt: we lost the client." Just "We lost Carta as a client on 14 Feb." The fact carries the vulnerability. A framing sentence converts it into performed sincerity, which readers now read as the tell.
+### Pass 3: ADD (only when genuinely supported)
 
-Forbidden as openers or pivots (sincerity announcements, a named 2026 tell): "let me be honest", "I'll be real", "honestly?", "to be direct", "the honest version is", "honest caveat", "real talk", "I'll say the quiet part", "can I be vulnerable for a second", "unpopular opinion:" as a preface to a popular one. Also forbidden as insertions: hedges the author did not write ("perhaps", "I might be wrong but", "it seems"). Performed hesitancy is 2x more common in LLM text than in expert human text; adding it makes the draft read more AI, not less.
+The purpose of this pass is to preserve or introduce real human specificity, not to manufacture personality.
 
-Varied sentence length is Pass 2's job. Do not add rhythm here.
+Look for opportunities to use:
 
-If the input lacks these, ask the user for a specific number, name, or moment to plug in. Don't fabricate.
+- A specific number with a clear referent.
+- A named person, company, product, place or date.
+- A real first-person observation or experience.
+- A genuine contradiction or self-correction.
+- A concrete detail that makes the author's point more credible or memorable.
 
-### Pass 4: SELF-CHECK (over-correction guard)
+These are optional editorial opportunities, not mandatory requirements.
 
-Humanizer output has its own fingerprint. Before returning, re-read the result once and answer three questions:
+**Never invent or manufacture:**
+- Personal experiences or anecdotes.
+- Sensory details.
+- Financial figures, dates or statistics.
+- Client stories, opinions or achievements.
+- Vulnerable moments or uncomfortable facts.
 
-(a) Did Pass 2 create staccato stacks, "The result?" reveal bridges, one-word paragraphs, or a long/short/long/short seesaw? If yes, merge fragments back into full sentences.
-(b) Did Pass 3 add a framed confession, a sincerity announcement, or a hedge the author never wrote? If yes, strip the frame and keep only the flat fact, or remove the insertion.
-(c) Did scrubbing flatten the author's voice: uniform tone, no reaction, no concrete detail left, every em dash gone, every triad gone, every long sentence chopped? If yes, restore what the author had. Zero em dashes and zero triads is a tell in its own right.
+If the source material lacks a useful detail, do not fill the gap with an invented one. Ask the user only when the missing detail is important to the post. Otherwise, proceed without it.
 
-If any answer is yes, dial back rather than scrub harder. Edits must be proportional to real problems: a clean draft gets two or three touches, not a fixed quota. When in doubt whether a pattern is the author or the model, leave it.
+Do not add confessions, artificial hesitancy or phrases such as "let me be honest" simply to make writing appear human.
+
+The best human detail is one that is true, relevant and natural to the author's voice.
+
+
+
+### Pass 4: SELF-CHECK (over-correction and voice protection)
+
+Before returning the edited content, review the complete draft.
+
+**A. AI-pattern check**
+- Did the rewrite introduce repetitive sentence structures?
+- Did it add artificial fragments, predictable transitions or generic conclusions?
+- Did it replace natural language with unnecessarily complicated wording?
+
+**B. Voice check**
+- Does the content match the identified author's voice profile?
+- Have their natural expressions, vocabulary and personality been preserved?
+- Does the draft sound too polished, generic or unlike the author?
+
+**C. Accuracy check**
+- Has the original meaning been preserved?
+- Have any facts, figures, opinions or experiences been added without evidence?
+- Are all names, dates and claims supported by the supplied material?
+
+**D. Editing proportionality**
+- Were only genuine problems corrected?
+- Has the rewrite removed something distinctive that should have stayed?
+- Would a lighter edit produce a better result?
+
+If any issue is found, revise the draft.
+
+Do not make unnecessary changes to a clean draft. The objective is authentic communication, not maximum rewriting.
+
 
 ## Non-negotiable rules
 
@@ -129,7 +193,7 @@ Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific
 - **Scrub proportionally.** A pass that finds nothing changes nothing. Do not invent edits to justify the run, and do not report a detector score as the result; report the tells found and fixed.
 - Preserve the user's actual claim and meaning. "Preserve their voice" covers sentence-level quirks and what they are claiming, NOT reveal bridges, staccato stacks, or a paragraph with 3+ vocabulary markers. Stripping those is not changing their voice or their claim; it is the job.
 - Never introduce facts that weren't in the input. If a number is missing, ask, or ship without it. Do not fabricate.
-- Never introduce sincerity markers, hedges, or confessional frames. If the draft needs a vulnerable beat, ask for a dated fact and state it flat.
+- Never introduce sincerity markers, hedges, or confessional frames. - Never manufacture vulnerability or personal storytelling. If a genuine personal detail would materially improve the draft, ask the author for it. Otherwise, proceed without it.
 - Keep the user's sentence-level voice quirks (lowercase starts, `..` soft pauses, one em dash, one natural triad).
 - Negative parallelism is a HARD ban (per Sergey 2026-04-27, now backed by -4.9% reach data): the strict tier always strips all 6 forms.
 - Never promise detector results. If the user asks "will this pass GPTZero," answer honestly: nobody can promise that, the score on a 200-word post is noise, and the sub-tool `sub-skills/detector-tester.md` exists to demonstrate the spread, not to certify a draft.
@@ -173,3 +237,82 @@ See `references/examples.md` for worked examples.
 ## Related skills
 
 - `linkedin-post-writer` — generates drafts that already pass the humanizer
+
+
+## Multi-Client Voice and Identity Protection
+
+This skill is designed for ghostwriting agencies managing multiple clients across different industries.
+
+### 1. Identify the client before editing
+
+Before humanizing content, identify the client whose voice the content represents.
+
+Use the relevant client's Voice & Brand Profile, if available. Do not assume that the current user's voice is the voice to use for every client.
+
+If the client is unclear, ask which client the content belongs to before applying a voice profile.
+
+### 2. Keep client identities separate
+
+Treat every client's information as a separate profile.
+
+Never:
+- Transfer stories, experiences, opinions or personal details from one client to another.
+- Borrow another client's vocabulary, tone or writing habits.
+- Assume that two clients in the same industry should sound alike.
+- Add personal experiences simply to make a post sound more human.
+
+Use only the facts and stories supplied for the identified client.
+
+### 3. Preserve the client's natural voice
+
+Humanization must improve readability without making every client sound like the same writer.
+
+Preserve:
+- Natural vocabulary and preferred expressions.
+- Sentence patterns and paragraph habits.
+- Appropriate humour, directness and personality.
+- The client's level of formality and professional confidence.
+- Deliberate stylistic choices that are not genuinely distracting.
+
+Do not force a uniform writing style across clients.
+
+### 4. Do not force personal storytelling
+
+The following are optional, not mandatory:
+- Odd-precision numbers.
+- Sensory details.
+- Contradictions or self-corrections.
+- Vulnerable or uncomfortable personal facts.
+- First-person anecdotes.
+
+Use these only when they are supported by the client's actual information and appropriate to the content.
+
+If a specific detail would materially improve the post but is missing, ask the user. Never invent it.
+
+### 5. Apply proportional editing
+
+Not every post needs a complete rewrite.
+
+Choose the lightest effective intervention:
+- Light edit: correct obvious AI patterns while retaining the original wording.
+- Medium edit: improve unnatural sentences, transitions and rhythm.
+- Deep edit: restructure sections that genuinely read as artificial, repetitive or generic.
+
+Do not rewrite clean, distinctive writing just to demonstrate that the Humanizer has done work.
+
+### 6. Final client-voice check
+
+Before returning the edited content, check:
+
+1. Does this sound consistent with the identified client's voice?
+2. Has the original meaning and intended message been preserved?
+3. Have any facts, opinions or personal experiences been invented?
+4. Does the writing sound natural rather than mechanically imperfect?
+5. Could this post plausibly have been written by this particular client?
+
+If the answer to any of these is no, revise the draft before returning it.
+
+### 7. Human approval
+
+Return the edited draft for human review. Never publish, send or schedule content without explicit approval.
+

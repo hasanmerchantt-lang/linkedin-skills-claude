@@ -1,4 +1,3 @@
-
 ---
 name: linkedin-post-writer
 description: "Create original, high-quality LinkedIn posts for personal brands, founders, executives, professionals and businesses across industries. Understand the client's voice, audience, expertise and objective; select an appropriate storytelling structure from the existing 20 hook formulas; develop compelling hooks; write, refine and quality-check posts. Use for new LinkedIn posts, content angles, hooks and post development. For auditing an existing draft, use linkedin-humanizer --mode audit."
@@ -59,6 +58,24 @@ If `../../references/voice-profile.md` has `filled: yes`, read it and follow its
 Do not imitate another client's voice.
 
 If no completed voice profile exists, use the available writing samples and conversation context. If there is insufficient information, mention that a voice profile can be created using `linkedin-humanizer --mode profile`, then proceed without pretending the voice has been fully established.
+
+### Reference voices
+
+A reference voice is a public creator studied for patterns. It is not a client and it is never the default.
+
+Reference voices live in `../../references/voices/<name>.md`. Currently available:
+
+- `anant-ladha.md` (Voice B, provisional): blunt, spoken register; opens on a dismissed belief, a dated moment or a plain number; three numbered points; an opinionated closing question.
+
+Rules:
+
+- Load a reference voice only when the user names it ("Voice B", "Anant Ladha style"). If no voice is named, use the author's own voice profile.
+- One post uses one voice. Do not blend a reference voice with the author's own voice inside a post.
+- Borrow patterns only: register, opening shape, structure, closing shape. Never borrow the creator's stories, credentials, numbers, exact sentences, catchphrases or sign-offs.
+- Facts, experiences and credentials always come from the author the post is published under.
+- The author's compliance boundaries override the reference voice. If the creator's style relies on market calls or "opportunity" framing the author cannot use, drop that element.
+- Never produce a post that could be mistaken for the creator's own.
+- If the reference file is marked provisional, say so in the editorial notes.
 
 ### Story Bank
 

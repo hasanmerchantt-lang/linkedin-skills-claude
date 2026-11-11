@@ -61,3 +61,4 @@ two copies of a rule is how the two paths quietly stop agreeing.
 | Approval before publish | `lib.publish` is only called after the approval card |
 | Handoff contracts hold | `tests/test_instruction_integrity.py` (spine on both sides, bank consumers read the bank) |
 | Documented reads match the code | `tests/test_mcp_read_layer.py` |
+| Reference voices load only when named, and lend patterns only | `linkedin-post-writer` step 1 (Reference voices); nothing automated enforces it yet |
