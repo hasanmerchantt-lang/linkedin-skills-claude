@@ -317,8 +317,6 @@ Do not add fabricated personal details to make the post appear human.
 ## Step 10: Quality check
 
 
-## Search Discoverability and Viral Potential Engine
-
 Every post must be evaluated for both LinkedIn search discoverability and feed engagement potential.
 
 These are separate objectives. Optimising one does not guarantee the other.
@@ -433,6 +431,7 @@ When actual LinkedIn analytics are available:
 
 Never invent performance data or claim an improvement without evidence.
 
+## Search Discoverability and Viral Potential Engine
 
 ## Step 11: Present the output
 
