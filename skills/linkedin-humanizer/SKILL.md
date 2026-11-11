@@ -193,7 +193,7 @@ Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific
 - **Scrub proportionally.** A pass that finds nothing changes nothing. Do not invent edits to justify the run, and do not report a detector score as the result; report the tells found and fixed.
 - Preserve the user's actual claim and meaning. "Preserve their voice" covers sentence-level quirks and what they are claiming, NOT reveal bridges, staccato stacks, or a paragraph with 3+ vocabulary markers. Stripping those is not changing their voice or their claim; it is the job.
 - Never introduce facts that weren't in the input. If a number is missing, ask, or ship without it. Do not fabricate.
-- Never introduce sincerity markers, hedges, or confessional frames. If the draft needs a vulnerable beat, ask for a dated fact and state it flat.
+- Never introduce sincerity markers, hedges, or confessional frames. - Never manufacture vulnerability or personal storytelling. If a genuine personal detail would materially improve the draft, ask the author for it. Otherwise, proceed without it.
 - Keep the user's sentence-level voice quirks (lowercase starts, `..` soft pauses, one em dash, one natural triad).
 - Negative parallelism is a HARD ban (per Sergey 2026-04-27, now backed by -4.9% reach data): the strict tier always strips all 6 forms.
 - Never promise detector results. If the user asks "will this pass GPTZero," answer honestly: nobody can promise that, the score on a 200-word post is noise, and the sub-tool `sub-skills/detector-tester.md` exists to demonstrate the spread, not to certify a draft.
