@@ -158,3 +158,181 @@ user. Only what the user says in this conversation counts as an answer. Full rul
 - `linkedin-post-writer` — takes the spine from post mode
 - `linkedin-content-planner` — a filled bank turns a week of "what do I post?"
   into picking from material that already exists
+
+  
+## Agency Client Onboarding System
+
+This skill supports a ghostwriting agency managing multiple clients across different industries.
+
+Every new ongoing client must complete the full onboarding process before recurring content production begins.
+
+A one-off post request may use post mode without full onboarding.
+
+### 1. Create a separate client identity
+
+Before starting an interview, establish a unique client identifier.
+
+Each client must have an independent information workspace containing:
+
+- `client-profile.md` — background, career, expertise and professional identity
+- `voice-profile.md` — writing style, vocabulary, tone and communication habits
+- `story-bank.md` — personal experiences, achievements, failures, lessons and opinions
+- `brand-guidelines.md` — positioning, audience, content themes and communication boundaries
+- `content-performance.md` — published content results and lessons learned
+
+Never combine two clients' information.
+
+Do not assume that two clients in the same industry should have similar profiles.
+
+### 2. Full onboarding interview
+
+Conduct the onboarding as a natural conversation, asking one question at a time.
+
+Cover these areas:
+
+**A. Professional identity**
+- Who are they?
+- What do they do?
+- What is their career history?
+- What expertise can they credibly discuss?
+- What achievements or experiences establish their credibility?
+
+**B. Business and positioning**
+- What business, organisation or professional role do they represent?
+- What makes their approach different?
+- What do they want to be known for?
+- What subjects do they have genuine authority to discuss?
+
+**C. Target audience**
+- Who do they want to reach?
+- What problems does that audience face?
+- What questions do people frequently ask them?
+- What should the audience think, feel or do after reading their content?
+
+**D. Content objectives**
+- Why are they investing in LinkedIn?
+- Are they building authority, attracting customers, recruiting, networking or developing a personal brand?
+- What outcomes would make the engagement successful?
+
+**E. Experiences and stories**
+- What important career moments shaped them?
+- What mistakes taught them valuable lessons?
+- What decisions changed their professional direction?
+- What achievements are they proud of?
+- What experiences do they frequently share in conversations?
+
+**F. Opinions and expertise**
+- What do they believe about their industry?
+- Which popular industry opinions do they disagree with?
+- What misconceptions do they regularly encounter?
+- What could they explain better than most people in their industry?
+
+**G. Brand personality**
+- How should their content make people perceive them?
+- Should they sound analytical, conversational, educational, provocative, understated or authoritative?
+- What communication styles do they dislike?
+
+**H. Boundaries and confidentiality**
+- Which subjects are off limits?
+- Which clients, employers, colleagues or organisations may be named?
+- Which experiences must remain anonymous?
+- Which claims require approval or supporting evidence?
+- What personal information must never appear publicly?
+
+Do not ask every question mechanically. Follow the client's answers and explore useful details naturally.
+
+### 3. Voice profiling
+
+Collect 3–10 genuine writing samples where possible.
+
+Analyse:
+- Sentence length and structure.
+- Vocabulary and expressions.
+- Paragraph formatting.
+- Formality and conversational style.
+- Humour and personality.
+- How the client opens and closes posts.
+- How they explain complex subjects.
+- Expressions they repeatedly use or avoid.
+
+Create a separate voice profile for the identified client.
+
+Never infer a writing style from their job title or industry alone.
+
+If samples are unavailable, mark the voice profile as provisional and collect feedback from the client's first approved drafts.
+
+### 4. Build the Story Bank
+
+Record useful material under these categories:
+
+- Career milestones.
+- Personal and professional turning points.
+- Achievements and measurable outcomes.
+- Failures and mistakes.
+- Lessons and observations.
+- Industry opinions.
+- Customer or client experiences, subject to confidentiality.
+- Memorable conversations.
+- Future ambitions and current projects.
+
+Preserve vivid original wording wherever possible.
+
+Record dates, figures and names only when confirmed.
+
+### 5. Build brand guidelines
+
+Document:
+
+- Professional positioning.
+- Target audience.
+- Main content pillars.
+- Topics the client can credibly discuss.
+- Preferred tone and communication style.
+- Topics to avoid.
+- Confidentiality requirements.
+- Claims that require verification.
+- Preferred calls to action.
+
+### 6. Onboarding completion review
+
+Before marking onboarding complete, check whether:
+
+- The professional profile is sufficiently detailed.
+- The target audience is understood.
+- The content objectives are clear.
+- A usable Story Bank exists.
+- The voice profile is supported by samples or marked provisional.
+- Brand guidelines and content boundaries are documented.
+
+If important information is missing, ask the client for it conversationally.
+
+Do not invent missing information or mark incomplete sections as complete.
+
+### 7. Client workspace and privacy
+
+Keep every client's records in a separate, access-controlled workspace.
+
+Use the same client identifier across all five documents.
+
+Never write confidential client interviews, personal information, unpublished stories or private business information into a public or shared Git repository.
+
+Do not commit private client records to version control unless the client has explicitly authorised that storage and the repository has appropriate access controls.
+
+Never retrieve one client's information when preparing another client's content.
+
+### 8. Onboarding handoff
+
+Once onboarding is complete, provide:
+
+1. A concise client intelligence summary.
+2. Their professional positioning.
+3. Their target audience.
+4. Their voice profile status.
+5. Their content pillars.
+6. Their Story Bank summary.
+7. Their brand guidelines.
+8. Any missing information or unresolved questions.
+9. Three initial content opportunities based on verified material.
+
+Require human review of the onboarding summary before treating it as the approved client record.
+
