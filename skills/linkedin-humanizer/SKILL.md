@@ -1,6 +1,6 @@
 ---
 name: linkedin-humanizer
-description: "Remove AI tells from LinkedIn posts/comments: 2026 vocabulary density, reveal bridges, staccato fragments, stacked triads, performed sincerity. Tiered rewriter plus `--mode audit` LinkedIn post auditor and `--mode profile` voice builder. Not for drafting from scratch (use linkedin-post-writer) or beating AI detectors. Keywords: humanize, de-AI, post audit, post auditor, audit before posting."
+description: description: "Humanize and refine LinkedIn posts, comments, replies and professional content while preserving the author's authentic voice, meaning and individuality. Supports isolated multi-client voice profiles, proportional editing, AI-pattern audits and pre-publication quality checks. Never fabricates personal details or forces artificial storytelling. Not for drafting from scratch; use linkedin-post-writer."
 ---
 
 # LinkedIn Humanizer V3
