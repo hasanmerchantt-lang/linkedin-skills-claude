@@ -1,6 +1,6 @@
 ---
 name: linkedin-humanizer
-description: description: "Humanize and refine LinkedIn posts, comments, replies and professional content while preserving the author's authentic voice, meaning and individuality. Supports isolated multi-client voice profiles, proportional editing, AI-pattern audits and pre-publication quality checks. Never fabricates personal details or forces artificial storytelling. Not for drafting from scratch; use linkedin-post-writer."
+description: "Humanize and refine LinkedIn posts, comments, replies and professional content while preserving the author's authentic voice, meaning and individuality. Supports isolated multi-client voice profiles, proportional editing, AI-pattern audits and pre-publication quality checks. Never fabricates personal details or forces artificial storytelling. Not for drafting from scratch; use linkedin-post-writer."
 ---
 
 # LinkedIn Humanizer V3
