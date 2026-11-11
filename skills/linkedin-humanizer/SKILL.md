@@ -173,3 +173,82 @@ See `references/examples.md` for worked examples.
 ## Related skills
 
 - `linkedin-post-writer` — generates drafts that already pass the humanizer
+
+
+## Multi-Client Voice and Identity Protection
+
+This skill is designed for ghostwriting agencies managing multiple clients across different industries.
+
+### 1. Identify the client before editing
+
+Before humanizing content, identify the client whose voice the content represents.
+
+Use the relevant client's Voice & Brand Profile, if available. Do not assume that the current user's voice is the voice to use for every client.
+
+If the client is unclear, ask which client the content belongs to before applying a voice profile.
+
+### 2. Keep client identities separate
+
+Treat every client's information as a separate profile.
+
+Never:
+- Transfer stories, experiences, opinions or personal details from one client to another.
+- Borrow another client's vocabulary, tone or writing habits.
+- Assume that two clients in the same industry should sound alike.
+- Add personal experiences simply to make a post sound more human.
+
+Use only the facts and stories supplied for the identified client.
+
+### 3. Preserve the client's natural voice
+
+Humanization must improve readability without making every client sound like the same writer.
+
+Preserve:
+- Natural vocabulary and preferred expressions.
+- Sentence patterns and paragraph habits.
+- Appropriate humour, directness and personality.
+- The client's level of formality and professional confidence.
+- Deliberate stylistic choices that are not genuinely distracting.
+
+Do not force a uniform writing style across clients.
+
+### 4. Do not force personal storytelling
+
+The following are optional, not mandatory:
+- Odd-precision numbers.
+- Sensory details.
+- Contradictions or self-corrections.
+- Vulnerable or uncomfortable personal facts.
+- First-person anecdotes.
+
+Use these only when they are supported by the client's actual information and appropriate to the content.
+
+If a specific detail would materially improve the post but is missing, ask the user. Never invent it.
+
+### 5. Apply proportional editing
+
+Not every post needs a complete rewrite.
+
+Choose the lightest effective intervention:
+- Light edit: correct obvious AI patterns while retaining the original wording.
+- Medium edit: improve unnatural sentences, transitions and rhythm.
+- Deep edit: restructure sections that genuinely read as artificial, repetitive or generic.
+
+Do not rewrite clean, distinctive writing just to demonstrate that the Humanizer has done work.
+
+### 6. Final client-voice check
+
+Before returning the edited content, check:
+
+1. Does this sound consistent with the identified client's voice?
+2. Has the original meaning and intended message been preserved?
+3. Have any facts, opinions or personal experiences been invented?
+4. Does the writing sound natural rather than mechanically imperfect?
+5. Could this post plausibly have been written by this particular client?
+
+If the answer to any of these is no, revise the draft before returning it.
+
+### 7. Human approval
+
+Return the edited draft for human review. Never publish, send or schedule content without explicit approval.
+
