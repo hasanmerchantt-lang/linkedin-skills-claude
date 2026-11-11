@@ -1,6 +1,6 @@
 ---
 name: linkedin-interviewer
-description: "Interview the user for the raw material their posts are made of. Builds a lasting Story Bank of roles, numbers, turning points, scars and positions, or runs a focused interview that turns one topic into a post spine. Use when a draft has nothing concrete to draw on, or the user says interview me. Not for learning how they write (use linkedin-humanizer --mode profile)."
+description: "Conduct comprehensive onboarding interviews for LinkedIn ghostwriting clients. Build separate client profiles, voice profiles, story banks, audience intelligence and brand guidelines. Supports full onboarding and focused post interviews. Preserve client confidentiality and keep all client information isolated. Never invent facts or personal experiences."
 ---
 
 # LinkedIn Interviewer
