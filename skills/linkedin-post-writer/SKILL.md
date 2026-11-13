@@ -65,11 +65,11 @@ A reference voice is a public creator studied for patterns. It is not a client a
 
 Reference voices live in `../../references/voices/<name>.md`. Currently available:
 
-- `anant-ladha.md` (Voice B, provisional): blunt, spoken register; opens on a dismissed belief, a dated moment or a plain number; three numbered points; an opinionated closing question.
+- `sharan-hegde.md` (Voice B, built from 7 sample posts): plain, warm explainer of the week's money news; opens on a fact and a twist; a mid-post pivot question; one personal line; closes on a question about the reader.
 
 Rules:
 
-- Load a reference voice only when the user names it ("Voice B", "Anant Ladha style"). If no voice is named, use the author's own voice profile.
+- Load a reference voice only when the user names it ("Voice B", "Sharan Hegde style"). If no voice is named, use the author's own voice profile.
 - One post uses one voice. Do not blend a reference voice with the author's own voice inside a post.
 - Borrow patterns only: register, opening shape, structure, closing shape. Never borrow the creator's stories, credentials, numbers, exact sentences, catchphrases or sign-offs.
 - Facts, experiences and credentials always come from the author the post is published under.
